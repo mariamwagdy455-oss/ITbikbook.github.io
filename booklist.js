@@ -11,23 +11,20 @@ function setList() {
   container.classList.add("list");
 }
 
-// ✅ Theme function (FIXED)
 function toggleTheme() {
   document.body.classList.toggle('dark');
   var status = document.body.classList.contains('dark') ? 'on' : 'off';
   localStorage.setItem('userTheme', status);
 }
 
-// ✅ Load saved theme
 window.onload = function () {
   if (localStorage.getItem('userTheme') === 'on') {
     document.body.classList.add('dark');
   }
 
-  applyCategoryFilter(); // 🔥 auto apply filter on load
+  applyCategoryFilter();
 };
 
-// 🔍 Search
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", function () {
@@ -45,7 +42,6 @@ searchInput.addEventListener("input", function () {
   });
 });
 
-// 📚 Category filter
 function applyCategoryFilter() {
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("cat");
