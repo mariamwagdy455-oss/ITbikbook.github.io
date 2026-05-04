@@ -35,7 +35,6 @@ header {
     z-index: 1000;
     position: relative;
 }
-/* animation buttons*/
 .left a {
     position: relative;
     display: inline-block;
@@ -83,7 +82,6 @@ body.dark .register:hover {
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
 }
-/* Content */
 .content {
     position: relative;
     text-align: center;
@@ -100,9 +98,6 @@ body.dark .register:hover {
     color: gray;
 }
 
-
-
-/*video*/
 .video-container {
     position: relative;
     display: flex;
@@ -135,7 +130,7 @@ body.dark .register:hover {
 .video-section {
     animation: fadeUp 1s ease;
 }
-/************************************/
+
 .hero-split {
     margin-top: 20px;
     height: 350px;
@@ -234,7 +229,6 @@ body.dark .card {
     background: var(--card);
     color: var(--text);
 }
-/* Animations */
 @keyframes fade {
     from {opacity: 0; transform: translateY(30px);}
     to {opacity: 1; transform: translateY(0);}
