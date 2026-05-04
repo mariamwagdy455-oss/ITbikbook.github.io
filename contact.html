@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact-style.css">
+<link href="https://fonts.googleapis.com/css2?family=poppins:wght@300;400;600&disply=swap" rel="stylesheet">
+<link rel="stylesheet" href="i.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bik Book</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Profile.html">Profile</a>
+                <a href="category.html">Category</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="theme-btn" onclick="toggleTheme()">
+            
+                <!-- Sun Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                    <path
+                        d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm98 382q-70-70-70-170t70-170q70-70 170-70t170 70q70 70 70 170t-70 170q-70 70-170 70t-170-70Zm283.5-56.5Q640-413 640-480t-46.5-113.5Q547-640 480-640t-113.5 46.5Q320-547 320-480t46.5 113.5Q413-320 480-320t113.5-46.5ZM480-480Z" />
+                </svg>
+            
+                <!-- Moon Icon -->
+                <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            
+            </button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="contact-info">
+            <p><strong>Contact us on Email:</strong> library_support@gmail.com</p>
+            <p><strong>Phone Number:</strong> +20 100 000 0000</p>
+        </div>
+
+        <div class="contact-box">
+            <h2>Send us a Message ✉️</h2>
+            <form id="contactForm">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="username@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Subject</label>
+                    <input type="text" id="subject" placeholder="Inquiry / Suggestion / Complaint" required>
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Library Project
+    </footer>
+
+    <script src="contact-script.js"></script>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            var status = document.body.classList.contains('dark') ? 'on' : 'off';
+            localStorage.setItem('userTheme', status);
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('userTheme') === 'on') {
+                document.body.classList.add('dark');
+            }
+
+            const savedBooks = JSON.parse(localStorage.getItem('myFavorites')) || [];
+            const grids = document.querySelectorAll('.books-grid');
+
+            grids.forEach(grid => grid.innerHTML = '');
+
+            if (savedBooks.length === 0) {
+                grids.forEach(grid => {
+                    grid.innerHTML = '<p style="color:#bbb; font-style:italic;">No books added to this rating yet.</p>';
+                });
+            } else {
+                savedBooks.forEach(book => {
+                    const targetGrid = document.querySelector(`#group-${book.rating} .books-grid`);
+                    if (targetGrid) {
+                        if (targetGrid.querySelector('p')) targetGrid.innerHTML = '';
+                        const card = document.createElement('div');
+                        card.className = 'book-card';
+                        card.innerHTML = `<span>${book.title}</span>`;
+                        targetGrid.appendChild(card);
+                    }
+                });
+            }
+        };
+    </script>
+</body>
+</html>

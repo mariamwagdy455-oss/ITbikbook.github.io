@@ -1,0 +1,249 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
+body.light-theme {
+    background-color: #f2dada;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+
+    transition: background 0.5s ease;
+}
+
+body.dark-theme {
+    background-color: #282727;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+
+    color: white;
+    transition: background 0.5s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+body.light-theme header {
+    background-color: #f9c6c6 !important;
+}
+
+body.light-theme footer {
+    background-color: #f9c6c6 !important;
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+    background-color: #353535 !important;
+    background: #353535 !important;
+}
+
+body.dark header,
+body.dark footer {
+    background-color: #353535 !important;
+    background: #353535 !important;
+}
+
+body.light-theme .nav-links a {
+    color: #333 !important;
+}
+
+body.dark-theme .nav-links a,
+body.dark .nav-links a {
+    color: #fff !important;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    position: relative;
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #FF6A6A;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.logo {
+    flex: 0 1 auto;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #FF6A6A, #FFD58D, #FF6A6A);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    display: block;
+    animation: shine 3s linear infinite;
+    padding-bottom: 5px;
+    width: max-content;
+    position: relative;
+    left: 40px;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 140px;
+    height: 3px;
+    background: #c06c6c;
+    border-radius: 10px;
+}
+
+@keyframes shine {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 200% center;
+    }
+}
+
+.nav-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn {
+    position: relative;
+    right: 50px;
+}
+
+.login-title {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.form {
+    max-width: 400px;
+    margin: 50px auto;
+    border: 1px solid #131112;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--form);
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input,
+.form textarea {
+    padding: 10px;
+    border: 1px solid #f9bbbb;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form input[type="submit"] {
+    background-color: #FF6A6A;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 30%;
+    margin-bottom: 10px;
+    transition: transform 0.2s, opacity 0.3s;
+    text-align: center;
+}
+
+.form input[type="reset"] {
+    background-color: #FF6A6A;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    width: 30%;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.form input[type="submit"]:hover,
+.form input[type="reset"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#errorMessage {
+    padding: 10px;
+    display: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin: 0;
+    padding: 6px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+:root {
+    --bg: #FFF4F4;
+    --text: #444;
+    --card: #fff;
+    --primary: #797285;
+    --btn: #FF6A6A;
+    --form: #ffd2d2;
+}
+
+body.dark {
+    --bg: #353535;
+    --text: #fff;
+    --card: #444;
+    --primary: #FFD58D;
+    --btn: #FF6868;
+    --form: #444;
+}

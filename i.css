@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.theme-btn {
+    background-color: #ff7675;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn svg {
+    position: absolute;
+    transition: 0.3s;
+}
+
+.sun-icon {
+    display: none;
+    stroke: white;
+}
+
+.moon-icon {
+    display: block;
+    stroke: white;
+}
+
+body.dark .sun-icon {
+    display: block;
+}
+
+body.dark .moon-icon {
+    display: none;
+}
+
+body.dark {
+    background-color: #1a1c1e;
+    color: #e1e1e1;
+}

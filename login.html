@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="i.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-theme"> 
+
+<header>
+    <nav class="navbar">
+        <div><h4 class="logo">Bik Book</h4></div>
+<div class="nav-actions">
+    
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="category.html">Category</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-btn" onclick="toggleTheme()">
+        
+                <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                </svg>
+        
+                <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+        
+            </button>
+    </nav>
+</header>
+
+<div class="main-container">
+    <h1 class="login-title">Welcome to Login Page!</h1>
+
+    <form class="form" id="loginForm">
+        <h2><u>Please fill in your data</u></h2> 
+
+        <h3>Email</h3>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <h3>Password</h3> 
+        <input type="password" id="password" placeholder="Password" required> 
+
+        <br><br>
+        <p id="errorMessage"></p>
+
+        <input type="submit" value="Login"> 
+        <input type="reset" value="Reset">
+    </form>
+</div>    
+
+<footer>
+    <p>© 2026 Library Project</p>
+</footer>
+
+
+</div>
+
+<script src="data.js"></script>
+
+</body>
+</html>

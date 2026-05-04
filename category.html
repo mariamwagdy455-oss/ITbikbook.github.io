@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="category.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="i.css">
+    <title>category</title>
+</head>
+
+
+<body>
+
+    <nav>
+        <div class="logo">BikBook</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <button class="theme-btn" onclick="toggleTheme()">
+        
+            <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+        
+            <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+        
+        </button>
+    </nav>
+    <main>
+
+        <section class="first">
+            <div class="one"></div>
+
+            <div class="search">
+                <label><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e3e3e3">
+                        <path
+                            d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                    </svg></label>
+                <input type="search" id="searchBox" onkeyup="handleSearch()" placeholder="Search for category...">
+            </div>
+
+            <div class="intro">
+                <h1 class="head">Pick your vibe</h1>
+                <p class="prag">
+                    You don’t need to have everything figured out… just pick where to start.
+                    Each section here can change how you think — just give it a try.
+                </p>
+            </div>
+            <div class="tir"></div>
+        </section>
+        <section class="categories second">
+
+            <a href="booklist.html#self" class="card a1" target="_blank">
+                <div class="a" id="selfdev">
+                    <h3>Self Development</h3>
+                    <p class="sel">If you actually want to grow, this is where you begin.
+                        Not just motivation… real stuff that helps you improve.</p>
+
+                </div>
+            </a>
+            <a href="booklist.html#science" target="_blank" class="card a2">
+                <div class="a" id="science">
+                    <h3>Science</h3>
+                    <p class="sc">Curiosity is all you need here.
+                        Science isn’t hard… you just need to ask and keep going.</p>
+                </div>
+            </a>
+            <a href="booklist.html#fiction" target="_blank" class="card a3">
+                <div class="a" id="fiction">
+                    <h3>Fiction</h3>
+                    <p class="fic">Tired of reality? Go here.
+                        Stories that let you live a completely different life.</p>
+                </div>
+            </a>
+            <a href="booklist.html#medical" target="_blank" class="card a4">
+                <div class="a" id="medical">
+                    <h3>Medical</h3>
+                    <p class="med">Your body deserves to be understood.
+                        Simple info that actually helps in real life.</p>
+                </div>
+            </a>
+            <a href="booklist.html#tech" target="_blank" class="card a5">
+                <div class="a" id="tech">
+                    <h3>Tech</h3>
+                    <p class="tec">This is where the future is built.
+                        Everything you learn here will matter later.</p>
+                </div>
+            </a>
+            <a href="booklist.html#psychology" target="_blank" class="card a6">
+                <div class="a" id="psychology">
+                    <h3>Psychology</h3>
+                    <p class="psg">You’ll understand yourself and others better.
+                        Feelings, thoughts, behavior… everything has a reason.</p>
+                </div>
+            </a>
+            <a href="booklist.html#business" target="_blank" class="card a7">
+                <div class="a" id="business">
+                    <h3>Business</h3>
+                    <p class="bis">If you want to build something big, start here.
+                        Every big idea started small.</p>
+                </div>
+            </a>
+            <a href="booklist.html#history" target="_blank" class="card a8">
+                <div class="a" id="history">
+                    <h3>History</h3>
+                    <p class="his">The past explains more than you think.
+                        Every story here has something worth learning.</p>
+                </div>
+            </a>
+            <div class="tr"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Library Project</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+                document.body.classList.toggle('dark');
+                var status = document.body.classList.contains('dark') ? 'on' : 'off';
+                localStorage.setItem('userTheme', status);
+            }
+
+            window.onload = function () {
+                if (localStorage.getItem('userTheme') === 'on') {
+                    document.body.classList.add('dark');
+                }
+
+                const savedBooks = JSON.parse(localStorage.getItem('myFavorites')) || [];
+                const grids = document.querySelectorAll('.books-grid');
+
+                grids.forEach(grid => grid.innerHTML = '');
+
+                if (savedBooks.length === 0) {
+                    grids.forEach(grid => {
+                        grid.innerHTML = '<p style="color:#bbb; font-style:italic;">No books added to this rating yet.</p>';
+                    });
+                } else {
+                    savedBooks.forEach(book => {
+                        const targetGrid = document.querySelector(`#group-${book.rating} .books-grid`);
+                        if (targetGrid) {
+                            if (targetGrid.querySelector('p')) targetGrid.innerHTML = '';
+                            const card = document.createElement('div');
+                            card.className = 'book-card';
+                            card.innerHTML = `<span>${book.title}</span>`;
+                            targetGrid.appendChild(card);
+                        }
+                    });
+                }
+            };
+    </script>
+    <script>
+        function handleSearch() {
+            let input = document.getElementById("searchBox").value.toLowerCase();
+
+            let categories = {
+                "self development": "selfdev",
+                "science": "science",
+                "fiction": "fiction",
+                "medical": "medical",
+                "tech": "tech",
+                "psychology": "psychology",
+                "business": "business",
+                "history": "history"
+            };
+
+            for (let key in categories) {
+                if (input === key) {
+                    document.getElementById(categories[key]).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+</html>

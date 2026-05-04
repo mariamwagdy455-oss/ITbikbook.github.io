@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Details</title>
+
+  <link rel="stylesheet" href="book_details.css">
+   <link rel="stylesheet" href="i.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+
+    <div class="logo">Bik Book</div>
+    
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="category.html">Category</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  <button class="theme-btn" onclick="toggleTheme()">
+  
+    <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+    </svg>
+  
+    <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  
+  </button>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="book-layout">
+
+    <figure>
+      <img id="img" class="book-img">
+      <figcaption>Book Cover</figcaption>
+    </figure>
+
+    <article class="book-info">
+
+      <h1 id="title"></h1>
+      <p id="author"></p>
+      <p id="desc"></p>
+
+      <div class="stars" id="stars">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+
+      <button onclick="saveRating()">Rate</button>
+      <p id="ratingText"></p>
+
+      <button onclick="addToFavorites()">Add to Favorites</button>
+
+      <h3>Choose Version</h3>
+      <button onclick="openPDF()">Paper</button>
+      <button onclick="showAudio()">Audio</button>
+
+      <div id="content"></div>
+
+      <div id="content2"></div>
+
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Library Project</p>
+</footer>
+
+<script src="book_details.js"></script>
+
+</body>
+</html>
