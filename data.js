@@ -95,7 +95,7 @@ if (registerForm) {
 
     localStorage.setItem("users", JSON.stringify(users));
 
-    success.innerText = "Registered successfully ✅";
+    success.innerText = "Registered successfully";
 
     registerForm.reset();
 
